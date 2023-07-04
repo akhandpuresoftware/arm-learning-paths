@@ -48,7 +48,7 @@ Under `Service`, select `Elastic Container Registry`. Now select `All Elastic Co
 Under `Resources`, select `specific` and `Add ARN`. Here we will select the `region` and select `Any` for Repository name under `This account` and click on `Add ARNs`.
 
 <p align="center">
-  <img src="https://github.com/akhandpuresoftware/arm-learning-paths/assets/87687468/ff30260d-51d7-42e7-98f5-534f9ee468ad">
+  <img src="https://user-images.githubusercontent.com/87687468/17dc8e33-deec-49e5-a38f-21e204b8c2eb">
 </p>
 
 Skip the tags by clicking `Next`. Fill in an appropriate policy name. We will use `ECR_FullAccess` and select `Create policy`.
