@@ -48,7 +48,7 @@ Under `Service`, select `Elastic Container Registry`. Now select `All Elastic Co
 Under `Resources`, select `specific` and `Add ARN`. Here we will select the `region` and select `Any` for Repository name under `This account` and click on `Add ARNs`.
 
 <p align="center">
-  <img src="[https://picsum.photos/460/300](https://github.com/akhandpuresoftware/arm-learning-paths/assets/87687468/ff30260d-51d7-42e7-98f5-534f9ee468ad)">
+  <img src="https://github.com/akhandpuresoftware/arm-learning-paths/assets/87687468/ff30260d-51d7-42e7-98f5-534f9ee468ad">
 </p>
 
 <img align="center" src="https://github.com/akhandpuresoftware/arm-learning-paths/assets/87687468/ff30260d-51d7-42e7-98f5-534f9ee468ad">
