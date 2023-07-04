@@ -51,8 +51,6 @@ Under `Resources`, select `specific` and `Add ARN`. Here we will select the `reg
   <img src="https://github.com/akhandpuresoftware/arm-learning-paths/assets/87687468/ff30260d-51d7-42e7-98f5-534f9ee468ad">
 </p>
 
-<img align="center" src="https://github.com/akhandpuresoftware/arm-learning-paths/assets/87687468/ff30260d-51d7-42e7-98f5-534f9ee468ad">
-
 Skip the tags by clicking `Next`. Fill in an appropriate policy name. We will use `ECR_FullAccess` and select `Create policy`.
 
 ### Attaching the access policy
