@@ -67,6 +67,8 @@ When you submit this page you will get a confirmation screen. Save all of the in
 A new user will get created on **IAM>>User** page. Click on the user and go to `Security credentials` section. Click on `create access key`
 
 ![image #center](https://user-images.githubusercontent.com/87687468/236796346-390f5193-b5cf-4132-a18d-37ea23eba5a9.png)
+
+
 ![image #center](https://user-images.githubusercontent.com/87687468/236796580-521971ca-d3ad-4ce6-a5c4-47aa59d62427.png)
 
 Select `Command Line Interface (CLI)` and click on `Next`
@@ -181,6 +183,8 @@ The ECS Task is the action that takes our image and deploys it to a container. T
 * Under Environment Section, select `Operating system/Architecture` as  `Linux/ARM64` and leave everything else set to its default value and click `Next` in the lower Right corner of the dialog.
 
 ![image #center](https://user-images.githubusercontent.com/87687468/235848013-599bfcbe-27a1-4a47-a7ab-2914081b9b2d.png)
+
+
 ![image #center](https://github.com/akhandpuresoftware/arm-learning-paths/assets/87687468/507793d5-08be-46cf-b31f-e626d0bc3505)
 
 * Review everything and click on `create`. 
@@ -198,6 +202,8 @@ Edit the security group. Because `Nginx` runs on port 80 by default, and we open
 Auto-assign public IP should be set to ENABLED and click on `create`.
 
 ![1 #center](https://user-images.githubusercontent.com/87687468/235882089-9d7064d5-d2e2-44f6-99fa-1a94947ca246.JPG)
+
+
 ![image #center](https://user-images.githubusercontent.com/87687468/236178142-dd2d264d-4f5f-44aa-90c9-87f9601acac4.png)
 
 And finally, run the task by clicking `Create` in the lower Right corner of the page.
