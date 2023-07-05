@@ -133,7 +133,7 @@ Apply complete! Resources: 1 added, 0 changed, 0 destroyed.
 
 Terraform will create the ECR. You can confirm this on your Amazon Elastic Container Registry Repositories list.
 
-![image](https://github.com/akhandpuresoftware/arm-learning-paths/assets/87687468/e2b0170c-3cf8-4cf7-8fff-c8feeebaa178)
+![image #center](https://github.com/akhandpuresoftware/arm-learning-paths/assets/87687468/e2b0170c-3cf8-4cf7-8fff-c8feeebaa178)
 
 Now that you have an ECR repository ready, it’s time to create the Docker image and upload it to ECR. Follow below steps to do so:
 * [Create the Docker image](/learning-paths/server-and-cloud/ecs/deployment#create-the-docker-image)
@@ -142,7 +142,7 @@ Now that you have an ECR repository ready, it’s time to create the Docker imag
 
 Finally, refresh the repository’s page to verify you’ve successfully pushed the image to the AWS ECR repository.
 
-![image](https://github.com/akhandpuresoftware/arm-learning-paths/assets/87687468/cc056b76-edca-49d0-af4f-de989999f071)
+![image #center](https://github.com/akhandpuresoftware/arm-learning-paths/assets/87687468/cc056b76-edca-49d0-af4f-de989999f071)
 
 ## Create an ECS Cluster
 So far, you’ve created a repository and deployed the image. But whenever you want to launch, you’ll need a target. A cluster acts as the container target. It takes a task into the cluster configuration and runs that task within the cluster.
@@ -161,7 +161,7 @@ terraform apply
 ```
 Head over to Amazon ECS Clusters, and verify that you can see these changes:
 
-![image](https://github.com/akhandpuresoftware/arm-learning-paths/assets/87687468/136f3ec4-b7ca-4f73-a988-7d35e2a23b18)
+![image #center](https://github.com/akhandpuresoftware/arm-learning-paths/assets/87687468/136f3ec4-b7ca-4f73-a988-7d35e2a23b18)
 
 ## Configure AWS ECS Task Definition
 The image is now hosted in the ECR, but to run the image, you need to launch it onto an ECS container.
@@ -234,7 +234,7 @@ resource "aws_iam_role_policy_attachment" "ecsTaskExecutionRole_policy" {
 ```
 Run `terraform apply` to add these changes to AWS. Navigate to Amazon ECS Task Definitions, and these changes should reflect as such:
 
-![image](https://github.com/akhandpuresoftware/arm-learning-paths/assets/87687468/f39983c4-233f-4eb5-af48-7884aaaa881c)
+![image #center](https://github.com/akhandpuresoftware/arm-learning-paths/assets/87687468/f39983c4-233f-4eb5-af48-7884aaaa881c)
 
 ## Launch the Container
 At this point, AWS has most of the configurations needed. However, you need to connect all the above-created specifications together to launch your container successfully.
@@ -459,7 +459,7 @@ app_url = "load-balancer-dev-xxxxxxxxxx.us-east-x.elb.amazonaws.com"
 
 You can also access the URL from your load-balancer-dev as the DNS name. Copy it to your browser. You’ll see that the AWS ECS provisioned application has been served.
 
-![image](https://github.com/akhandpuresoftware/arm-learning-paths/assets/87687468/5b361020-2547-459c-88fa-b1ed3d1ad00e)
+![image #center](https://github.com/akhandpuresoftware/arm-learning-paths/assets/87687468/5b361020-2547-459c-88fa-b1ed3d1ad00e)
 
 Note that you can get a `503 Service Temporarily Unavailable` if you test your application immediately after running the `terraform apply` command. Give the infrastructure a few seconds to bring all components online.
 
