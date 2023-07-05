@@ -182,8 +182,6 @@ The ECS Task is the action that takes our image and deploys it to a container. T
 
 * Under Environment Section, select `Operating system/Architecture` as  `Linux/ARM64` and leave everything else set to its default value and click `Next` in the lower Right corner of the dialog.
 
-![mod1 #center](https://github.com/akhandpuresoftware/arm-learning-paths/assets/87687468/3730bb71-bd9e-4b84-ae1c-e39214507292)
-
 ![image #center](https://user-images.githubusercontent.com/87687468/235848013-599bfcbe-27a1-4a47-a7ab-2914081b9b2d.png)
 
 
