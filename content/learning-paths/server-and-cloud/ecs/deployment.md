@@ -197,8 +197,8 @@ Now select your cluster from drop down menu of `Existing cluster`. In Networking
 Edit the security group. Because `Nginx` runs on port 80 by default, and we opened port 80 on our container, we also need to open port 80 in the security group. Select `Create a new security group` and enter the Security group name and security group description and add a Custom TCP inbound rule that opens port 80.
 Auto-assign public IP should be set to ENABLED and click on `create`.
 
-![1](https://user-images.githubusercontent.com/87687468/235882089-9d7064d5-d2e2-44f6-99fa-1a94947ca246.JPG)
-![image](https://user-images.githubusercontent.com/87687468/236178142-dd2d264d-4f5f-44aa-90c9-87f9601acac4.png)
+![1 #center](https://user-images.githubusercontent.com/87687468/235882089-9d7064d5-d2e2-44f6-99fa-1a94947ca246.JPG)
+![image #center](https://user-images.githubusercontent.com/87687468/236178142-dd2d264d-4f5f-44aa-90c9-87f9601acac4.png)
 
 And finally, run the task by clicking `Create` in the lower Right corner of the page.
 
