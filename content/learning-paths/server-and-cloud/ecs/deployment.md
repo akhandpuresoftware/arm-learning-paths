@@ -67,7 +67,7 @@ When you submit this page you will get a confirmation screen. Save all of the in
 A new user will get created on **IAM>>User** page. Click on the user and go to `Security credentials` section. Click on `create access key`
 
 ![image #center](https://user-images.githubusercontent.com/87687468/236796346-390f5193-b5cf-4132-a18d-37ea23eba5a9.png)
-![image](https://user-images.githubusercontent.com/87687468/236796580-521971ca-d3ad-4ce6-a5c4-47aa59d62427.png)
+![image #center](https://user-images.githubusercontent.com/87687468/236796580-521971ca-d3ad-4ce6-a5c4-47aa59d62427.png)
 
 Select `Command Line Interface (CLI)` and click on `Next`
 
@@ -96,11 +96,11 @@ Once you are in, search for Elastic Container Registry and select it.
 
 From there fill in the name of the repository as myapp and leave everything else default.
 
-![image](https://github.com/akhandpuresoftware/arm-learning-paths/assets/87687468/727d18c4-fe52-4211-abc0-7a0f0d9ea123)
+![image #center](https://github.com/akhandpuresoftware/arm-learning-paths/assets/87687468/727d18c4-fe52-4211-abc0-7a0f0d9ea123)
 
 Select `Create Repository` in the lower right of the page and your repository will be created. You will see your repository in the repository list, and most importantly the ARN(here called a URI) which we will need to push up our image. Copy the URI for the next step.
 
-![image](https://github.com/akhandpuresoftware/arm-learning-paths/assets/87687468/aa09712b-9950-49f3-8280-8109aee81135)
+![image #center](https://github.com/akhandpuresoftware/arm-learning-paths/assets/87687468/aa09712b-9950-49f3-8280-8109aee81135)
 
 ## Create the Docker image
 
@@ -153,15 +153,15 @@ docker push [your account number].dkr.ecr.us-east-2.amazonaws.com/myapp
 
 Search for `Elastic Container Service` and select `Elastic Container Service`. From the left menu select `Clusters` and then select `Create cluster`.
 
-![image](https://user-images.githubusercontent.com/87687468/235840042-e7461d64-1c1f-4a61-b930-fb1c24d36281.png)
+![image #center](https://user-images.githubusercontent.com/87687468/235840042-e7461d64-1c1f-4a61-b930-fb1c24d36281.png)
 
 Name the cluster and the rest we can leave as it is. Select `Create`.
 
-![image](https://user-images.githubusercontent.com/87687468/235840668-d13d607d-b546-4d5f-bf95-00b0f57e8322.png)
+![image #center](https://user-images.githubusercontent.com/87687468/235840668-d13d607d-b546-4d5f-bf95-00b0f57e8322.png)
 
 A cluster will be created as below.
 
-![image](https://user-images.githubusercontent.com/87687468/235840972-51355567-ac19-476d-b969-7c010cb41688.png)
+![image #center](https://user-images.githubusercontent.com/87687468/235840972-51355567-ac19-476d-b969-7c010cb41688.png)
 
 ## Create an ECS Task
 
@@ -169,29 +169,29 @@ The ECS Task is the action that takes our image and deploys it to a container. T
 
 * Select `Task Definitions` from the left menu. Then select `Create new Task Definition`.
 
-![image](https://user-images.githubusercontent.com/87687468/235845002-667547ac-5cb4-4dfb-b81c-0c379bd45745.png)
+![image #center](https://user-images.githubusercontent.com/87687468/235845002-667547ac-5cb4-4dfb-b81c-0c379bd45745.png)
 
 * Enter the name of the `Task definition family` in  `Task definition configuration`. 
 * Enter the name of your container and ARN of our image in the Image box. You can copy this from the ECR dashboard if you haven’t already. Leave everything as it is and click on `Next`.
 
-![image](https://github.com/akhandpuresoftware/arm-learning-paths/assets/87687468/9f057197-22c6-41b3-86f3-813f2a5a9aaf)
+![image #center](https://github.com/akhandpuresoftware/arm-learning-paths/assets/87687468/9f057197-22c6-41b3-86f3-813f2a5a9aaf)
 
 {{% notice Note %}} Here we are not mapping any other port as Nginx runs on port 80 by default.{{% /notice %}} 
 
 * Under Environment Section, select `Operating system/Architecture` as  `Linux/ARM64` and leave everything else set to its default value and click `Next` in the lower Right corner of the dialog.
 
-![image](https://user-images.githubusercontent.com/87687468/235848013-599bfcbe-27a1-4a47-a7ab-2914081b9b2d.png)
-![image](https://github.com/akhandpuresoftware/arm-learning-paths/assets/87687468/507793d5-08be-46cf-b31f-e626d0bc3505)
+![image #center](https://user-images.githubusercontent.com/87687468/235848013-599bfcbe-27a1-4a47-a7ab-2914081b9b2d.png)
+![image #center](https://github.com/akhandpuresoftware/arm-learning-paths/assets/87687468/507793d5-08be-46cf-b31f-e626d0bc3505)
 
 * Review everything and click on `create`. 
 
 Go to the ECS page, select Task Definitions and we should see our new task with a status of ACTIVE.
 
-![image](https://user-images.githubusercontent.com/87687468/235849100-2865c98a-77fd-45f9-8d49-5c9acac0f5e9.png)
+![image #center](https://user-images.githubusercontent.com/87687468/235849100-2865c98a-77fd-45f9-8d49-5c9acac0f5e9.png)
 
 Now select the task in the Task definition list. Click on `Deploy` and select `Run Task`.
 
-![image](https://user-images.githubusercontent.com/87687468/235880090-aad4cd44-51fd-4e2d-aaf4-d4450db656e5.png)
+![image #center](https://user-images.githubusercontent.com/87687468/235880090-aad4cd44-51fd-4e2d-aaf4-d4450db656e5.png)
 
 Now select your cluster from drop down menu of `Existing cluster`. In Networking section, select a vpc from the list. If you are building a custom app this should be the vpc assigned to any other AWS services you will need to access from your instance. For our app, any will do. Add at least one subnet.
 Edit the security group. Because `Nginx` runs on port 80 by default, and we opened port 80 on our container, we also need to open port 80 in the security group. Select `Create a new security group` and enter the Security group name and security group description and add a Custom TCP inbound rule that opens port 80.
@@ -206,22 +206,22 @@ And finally, run the task by clicking `Create` in the lower Right corner of the 
 
 After you run the Task, you will be forwarded to the Fargate-cluster page. When the Last Status for your cluster changes to RUNNING, your app is up and running. You may have to refresh the table a couple of times before the status is RUNNING. This can take a few minutes.
 
-![image](https://user-images.githubusercontent.com/87687468/236180290-963d6e6b-a67c-4a74-a102-20f8faa871f5.png)
+![image #center](https://user-images.githubusercontent.com/87687468/236180290-963d6e6b-a67c-4a74-a102-20f8faa871f5.png)
 
 Click on the link in the Task column and find the Public IP address in the `Configuration` section of the Task page.
 
-![image](https://user-images.githubusercontent.com/87687468/236181529-38d2bb22-59d6-4cd5-a7bc-123fcbe39917.png)
+![image #center](https://user-images.githubusercontent.com/87687468/236181529-38d2bb22-59d6-4cd5-a7bc-123fcbe39917.png)
 
 Enter the public IP address followed by :Port(In our case :80) in your browser to see your app in action.
 
-![image](https://user-images.githubusercontent.com/87687468/236188907-5953f69d-98c2-4def-b5b2-b6b71186af19.png)
+![image #center](https://user-images.githubusercontent.com/87687468/236188907-5953f69d-98c2-4def-b5b2-b6b71186af19.png)
 
 ## Shut down the app
 
 When you are done, you’ll want to shut down your app to avoid charges. From the ECS page select `Clusters` from the left menu and select your cluster from the list of clusters.
 
-![image](https://user-images.githubusercontent.com/87687468/236189556-7516dd61-f9fd-4807-96c3-a9a47d08c9b2.png)
+![image #center](https://user-images.githubusercontent.com/87687468/236189556-7516dd61-f9fd-4807-96c3-a9a47d08c9b2.png)
 
 From the table at the bottom of the page select `tasks`. Check the box next to the running task and select `stop` from the dropdown menu at the top of the table.
 
-![image](https://user-images.githubusercontent.com/87687468/236190146-48ec2000-50dc-4772-b4c4-f440577b50b4.png)
+![image #center](https://user-images.githubusercontent.com/87687468/236190146-48ec2000-50dc-4772-b4c4-f440577b50b4.png)
