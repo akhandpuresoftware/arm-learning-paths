@@ -24,26 +24,26 @@ You will need an [AWS account](https://portal.aws.amazon.com/billing/signup?nc2=
 
 Login to your AWS account as a root user and search for IAM.
 
-![image](https://user-images.githubusercontent.com/87687468/235642307-130785da-6ddd-4eb4-afc3-382d441c1c9d.png)
+![image #center](https://user-images.githubusercontent.com/87687468/235642307-130785da-6ddd-4eb4-afc3-382d441c1c9d.png)
 
 From the IAM dashboard select `Users` from the left menu and click on `Add user` from the top of the page.
 
-![user](https://user-images.githubusercontent.com/87687468/235642557-f2db9563-7c4f-4882-a40a-d81a3c84b9d3.png)
+![user #center](https://user-images.githubusercontent.com/87687468/235642557-f2db9563-7c4f-4882-a40a-d81a3c84b9d3.png)
 
 On the `Add user` screen enter a username and select the check box before `Provide user access to the AWS Management Console`. Then select `I want to create an IAM user` and click on `next`
 
-![image](https://user-images.githubusercontent.com/87687468/236792673-6e6f4690-f06e-45b3-b87d-243872ddc3a6.png)
+![image #center](https://user-images.githubusercontent.com/87687468/236792673-6e6f4690-f06e-45b3-b87d-243872ddc3a6.png)
 
 ### Create an ECR policy
 
 We will need to have access to ECR to store our images but there is no Amazon-managed policy option. We must create a new policy to attach to our IAM user.
 To do so, select `Create policy`.
 
-![permission](https://user-images.githubusercontent.com/87687468/237015604-85e79e95-20c8-42b4-a489-f8453693c6ce.png)
+![permission #center](https://user-images.githubusercontent.com/87687468/237015604-85e79e95-20c8-42b4-a489-f8453693c6ce.png)
 
 Under `Service`, select `Elastic Container Registry`. Now select `All Elastic Container Registry actions (ecr:*)` under `Actions allowed`. 
 
-![policy](https://user-images.githubusercontent.com/87687468/237007344-ef0af46f-d96c-49ed-96e2-9cae5415cc95.png)
+![policy #center](https://user-images.githubusercontent.com/87687468/237007344-ef0af46f-d96c-49ed-96e2-9cae5415cc95.png)
 
 Under `Resources`, select `specific` and `Add ARN`. Here we will select the `region` and select `Any` for Repository name under `This account` and click on `Add ARNs`.
 
@@ -57,25 +57,25 @@ ECS requires permissions for many services such as listing roles and creating cl
 
 Select `Attach existing policies directly` under `Set permissions` and search for `AmazonECS_FullAccess` & `ECR_FullAccess`. Select checkbox next to the policies.
 
-![permission1](https://github.com/akhandpuresoftware/arm-learning-paths/assets/87687468/fb69eced-d5be-413f-b550-bef713cad2cc)
+![permission1 #center](https://github.com/akhandpuresoftware/arm-learning-paths/assets/87687468/fb69eced-d5be-413f-b550-bef713cad2cc)
 
 Select `Next` to review our work and create the user.
 
-![image](https://user-images.githubusercontent.com/87687468/237018931-b11edaa3-a78e-40e1-9680-b87cdca27a3e.png)
+![image #center](https://user-images.githubusercontent.com/87687468/237018931-b11edaa3-a78e-40e1-9680-b87cdca27a3e.png)
 
 When you submit this page you will get a confirmation screen. Save all of the information there in safe place we will need all of it when we deploy our container.
 A new user will get created on **IAM>>User** page. Click on the user and go to `Security credentials` section. Click on `create access key`
 
-![image](https://user-images.githubusercontent.com/87687468/236796346-390f5193-b5cf-4132-a18d-37ea23eba5a9.png)
+![image #center](https://user-images.githubusercontent.com/87687468/236796346-390f5193-b5cf-4132-a18d-37ea23eba5a9.png)
 ![image](https://user-images.githubusercontent.com/87687468/236796580-521971ca-d3ad-4ce6-a5c4-47aa59d62427.png)
 
 Select `Command Line Interface (CLI)` and click on `Next`
 
-![image](https://user-images.githubusercontent.com/87687468/236796940-8a5dcb6a-2008-49c2-a117-72379df22f9d.png)
+![image #center](https://user-images.githubusercontent.com/87687468/236796940-8a5dcb6a-2008-49c2-a117-72379df22f9d.png)
 
 Add description and create access key.
 
-![image](https://user-images.githubusercontent.com/87687468/236797205-a6a795af-6988-41ed-96da-e2da63bd0a4a.png)
+![image #center](https://user-images.githubusercontent.com/87687468/236797205-a6a795af-6988-41ed-96da-e2da63bd0a4a.png)
 
 Save `Access key` and `Secret access key` somewhere safe, we will need the same while configuring AWS CLI. 
 
@@ -84,15 +84,15 @@ Save `Access key` and `Secret access key` somewhere safe, we will need the same 
 In this step we are going to create the repository in ECR to store our image. We will need the ARN (Amazon Resource Name — a unique identifier for all AWS resources) of this repository to properly tag and upload our image.
 First login to the AWS console with the `test_user` credentials we created earlier. Amazon will ask for your `account id`, `username`, and `password`.
 
-![image](https://github.com/akhandpuresoftware/arm-learning-paths/assets/87687468/15119efa-95ec-4dcc-b886-f9152f0f7bc8)
+![image #center](https://github.com/akhandpuresoftware/arm-learning-paths/assets/87687468/15119efa-95ec-4dcc-b886-f9152f0f7bc8)
 
 It will ask to change your default password, change the same as per your choice.
 
-![image](https://github.com/akhandpuresoftware/arm-learning-paths/assets/87687468/f741024d-1dd2-4a4a-88ed-e340eff26726)
+![image #center](https://github.com/akhandpuresoftware/arm-learning-paths/assets/87687468/f741024d-1dd2-4a4a-88ed-e340eff26726)
 
 Once you are in, search for Elastic Container Registry and select it.
 
-![image](https://user-images.githubusercontent.com/87687468/236801302-7ea5a6ff-09ff-4a35-81d6-576880e240bd.png)
+![image #center](https://user-images.githubusercontent.com/87687468/236801302-7ea5a6ff-09ff-4a35-81d6-576880e240bd.png)
 
 From there fill in the name of the repository as myapp and leave everything else default.
 
